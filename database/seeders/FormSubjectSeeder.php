@@ -18,7 +18,7 @@ class FormSubjectSeeder extends Seeder
     public function run()
     {
         $forms = Form::all();
-        $subjects = Subject::pluck(3);
+        $subjects = Subject::limit(3)->get();
         foreach($forms as $form){
             foreach($subjects as $subject){
                 FormSubject::create([
