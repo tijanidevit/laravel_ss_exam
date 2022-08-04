@@ -10,4 +10,6 @@ class SubjectExam extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    //Model not used, ExamQuestion Used instead
 }

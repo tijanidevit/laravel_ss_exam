@@ -9,4 +9,14 @@ class Teacher extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function form() : Form
+    {
+        return $this->hasOneThrough(Form::class, FormTeacher::class);
+    }
+
+    public function user() : User
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -9,4 +9,12 @@ class FormSubject extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function form() : Form{
+        return $this->belongsTo(Form::class);
+    }
+
+    public function subject() : Subject{
+        return $this->belongsTo(Subject::class);
+    }
 }

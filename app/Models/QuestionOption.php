@@ -9,4 +9,8 @@ class QuestionOption extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function question() : ExamQuestion{
+        return $this->belongsTo(ExamQuestion::class);
+    }
 }

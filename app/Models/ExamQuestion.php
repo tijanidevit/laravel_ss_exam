@@ -9,4 +9,10 @@ class ExamQuestion extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    
+    public function options() : Option
+    {
+        return $this->hasMany(Option::class);
+    }
 }
