@@ -24,20 +24,20 @@
                         <div class="col-12">
                             <h5 class="form-title"><span>Teacher Details</span></h5>
                         </div>
-                        {{-- <div class="col-12">
+                        <div class="col-12">
                             @if (session('error'))
                                 <div class="text-danger">{{session('error')}}</div>
                             @endif
-                        </div> --}}
+                        </div>
+                        
+                        <div class="col-12">
+                            @if (session('success'))
+                                <div class="alert alert-success">{{session('success')}}</div>
+                            @endif
+                        </div>
 
                         
                         <div class="col-12 col-sm-6">
-                            @if($errors->any())
-                                @foreach ($errors->all() as $error)
-                                    <div>{{ $error }}</div>
-                                @endforeach
-                            @endif
-                            
                             <div class="form-group">
                                 <label>Teacher ID</label>
                                 <input type="text" name="staff_id" value="{{old('staff_id')}}" class="form-control">

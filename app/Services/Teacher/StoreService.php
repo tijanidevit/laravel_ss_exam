@@ -24,7 +24,6 @@ class StoreService{
         try{
             DB::transaction(function(){
                 $user = $this->storeUser();
-                dd($user);
                 return $this->storeTeacher($user);
             });
         }

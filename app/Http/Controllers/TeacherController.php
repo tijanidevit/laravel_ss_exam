@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Teacher;
 use App\Services\Teacher\StoreService;
 use App\Http\Requests\Teacher\StoreRequest;
+use App\Http\Requests\Teacher\FetchService;
 
 class TeacherController extends Controller
 {
     public function index()
     {
-        //
+        $teachers = (new FetchService())->run();
+        return view('admin.teachers.all-teachers', compact('teachers'));
     }
 
     public function create()
@@ -22,7 +24,7 @@ class TeacherController extends Controller
     {
         try {
             $teacher = (new StoreService($request->all()))->run();
-            dd($teacher);
+            return back()->with('success', 'Teacher added successfully!');
         } catch (\Exception $ex) {
             return back()->with('error', $ex->getMessage());
         }
