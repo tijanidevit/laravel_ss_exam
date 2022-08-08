@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +15,7 @@ Route::get('/', function () {
 Route::get('admin/login', function ()
 {
     return view('admin.auth.login');
-})->name('login');
+});
 
 Route::get('logout', function ()
 {

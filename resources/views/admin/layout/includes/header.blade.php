@@ -43,4 +43,8 @@
                 </div>
                 <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
             </div>
-      
+        </li>
+
+    </ul>
+
+</div>

@@ -7,6 +7,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -40,27 +41,27 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function teacher() : Teacher
+    public function teacher() : HasOne
     {
         return $this->hasOne(Teacher::class);
     }
 
-    public function student() : Student
+    public function student() : HasOne
     {
         return $this->hasOne(Student::class);
     }
 
-    public function isAdmin()
+    public function isAdmin() : bool
     {
         return $this->user_role === UserRoles::ADMIN;
     }
 
-    public function isTeacher()
+    public function isTeacher() : bool
     {
         return $this->user_role === UserRoles::TEACHER;
     }
 
-    public function isStudent()
+    public function isStudent() : bool
     {
         return $this->user_role === UserRoles::STUDENT;
     }

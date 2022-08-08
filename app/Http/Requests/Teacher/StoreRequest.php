@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Teacher;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreRequest extends FormRequest
 {
@@ -27,8 +28,7 @@ class StoreRequest extends FormRequest
             'email' => 'required|email|unique:users',
             'staff_id' => 'required|unique:teachers',
             'fullname' => 'required',
-            'password' => 'required|password|min:6',
-            'image' => 'required|min:6',
+            'image' => 'required|mimes:jpeg,png,jpg,gif',
             'bio' => 'sometimes|required',
         ];
     }

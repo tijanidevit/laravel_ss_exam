@@ -15,14 +15,14 @@ class TeacherController extends Controller
 
     public function create()
     {
-        //
+        return view('admin.teachers.create-teacher');
     }
 
     public function store(StoreRequest $request)
     {
         try {
-            $data = $request->all();
-            $teacher = (new StoreService($data))->run();
+            $teacher = (new StoreService($request->all()))->run();
+            dd($teacher);
         } catch (\Exception $ex) {
             return back()->with('error', $ex->getMessage());
         }
