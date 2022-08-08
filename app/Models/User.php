@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use App\Enums\UserRoles;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -47,5 +48,20 @@ class User extends Authenticatable
     public function student() : Student
     {
         return $this->hasOne(Student::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->user_role === UserRoles::ADMIN;
+    }
+
+    public function isTeacher()
+    {
+        return $this->user_role === UserRoles::TEACHER;
+    }
+
+    public function isStudent()
+    {
+        return $this->user_role === UserRoles::STUDENT;
     }
 }
