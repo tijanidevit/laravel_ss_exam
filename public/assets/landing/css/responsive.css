@@ -1,0 +1,891 @@
+/*          Responsive styles
+================================================== */
+
+@media only screen and (min-width: 1678px) and (max-width: 1923px) {}
+
+@media only screen and (min-width: 1390px) and (max-width: 1677px) {}
+
+
+
+/*                     Tablet Landscape
+=======================================================================================*/
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+  /*--------------------------------------
+   Header And SLider
+----------------------------------------*/
+  .ellipse3 {
+    margin-right: -400px;
+  }
+
+  .ellipse2 {
+    margin-right: -464px;
+  }
+
+  .ellipse6 {
+    margin-right: -460px;
+  }
+
+  .ellipse5 {
+    display: none;
+  }
+
+  .hero_img {
+    position: relative;
+    width: 440px;
+    float: right;
+  }
+
+  .hero_text h2 {
+    font-size: 42px;
+    letter-spacing: 0px;
+  }
+
+  .category-item h4 {
+    margin-left: 15px;
+  }
+
+  /* Best Book */
+  .bbook_crs_item {
+    width: auto;
+    right: 20px;
+  }
+
+  .bbook_wrap {
+    gap: 24px;
+  }
+
+  .best-book-section .base-header {
+    margin-top: -25px;
+  }
+
+  .bbook_btn {
+    margin-top: 45px;
+  }
+
+  #best_book::after {
+    top: -20px;
+  }
+
+  .bbook_item {
+    padding: 20px 18px;
+  }
+
+  .best-book-section .col-lg-6:first-child {
+    width: 55%;
+  }
+
+  .best-book-section .col-lg-6:last-child {
+    width: 45%;
+  }
+
+  .best-book-section .owl-dots {
+    margin-right: 300px;
+  }
+
+
+  /* Feedback */
+  .lfeedback_img {
+    width: 480px;
+  }
+
+  /*  HOME Two */
+  .coding {
+    top: 31%;
+    right: 0px;
+  }
+
+  .hero_two .ellipse3,
+  .hero_two .ellipse4 {
+    display: none;
+  }
+
+  .hero_two .ellipse8 {
+    margin-right: -72px;
+  }
+
+  .hero_two .hero_img {
+    margin-left: 40px;
+    margin-top: 15px;
+  }
+
+  /* Work Flow */
+  .workflow_item {
+    padding: 45px 30px 29px;
+  }
+
+  /* About Page */
+  .cta_text {
+    padding-right: 94px;
+  }
+
+  /* Contact Page */
+  .contact-section .col-lg-4 {
+    width: 40%;
+  }
+
+  .contact-section .col-lg-8 {
+    width: 60%;
+  }
+
+  /*  Blog Page */
+  .widget-area {
+    padding-left: 15px;
+  }
+
+  .recnt_pst_imge {
+    width: 85px;
+  }
+
+  .recnt_pst_imge img {
+    height: 70px;
+  }
+
+  /*  Course Page */
+  .course_tab ul li button {
+    padding: 7px 35px;
+  }
+
+  /* Login Page */
+  .reg_wrap {
+    grid-template-columns: 380px 1fr;
+    gap: 40px;
+  }
+
+  /* Event Page */
+  .events-page .feat_cour_lesson {
+    flex-direction: column;
+  }
+}
+
+
+/*                      Tablet Portrait and Phone
+=======================================================================================*/
+@media only screen and (max-width: 992px) {
+  .navigation {
+    padding: 30px 0px;
+  }
+
+  .is-sticky .navigation {
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+
+  .header_sign {
+    display: none;
+  }
+
+  .navigation .container {
+    align-items: inherit;
+    display: block;
+  }
+
+  .navigation {
+    padding-top: 20px;
+  }
+
+
+  #navigation>ul>li.has-sub>a,
+  #navigation>ul>li>a {
+    padding: 17px 0px 17px 20px;
+  }
+
+  #navigation ul li.has-sub:before {
+    display: none;
+  }
+
+  #navigation.small-screen {
+    margin-top: -47px;
+  }
+
+  #navigation.small-screen>ul {
+    width: 100%;
+    display: none;
+    margin-top: 30px;
+    border: 1px solid rgba(120, 120, 120, 0.2);
+    border-top: none;
+  }
+
+  #navigation li:hover>ul {
+    left: auto;
+    top: 0px !important;
+  }
+
+  #navigation li:hover>ul {
+    background: transparent;
+  }
+
+  #navigation.small-screen ul ul li a {
+    padding-left: 35px;
+  }
+
+  /* Hero */
+  .hero-section {
+    padding-bottom: 90px;
+  }
+
+  .hero_text {
+    text-align: center;
+    margin-top: 74px;
+  }
+
+  .hero_text p {
+    padding-right: 0px;
+  }
+
+  .hero_course {
+    justify-content: space-between;
+  }
+
+  .hero_img {
+    float: inherit;
+    width: 400px;
+    margin: auto;
+    margin-top: -115px;
+  }
+
+  .hero_ellipse_icon {
+    display: none;
+  }
+
+  .slider_owl.owl-theme .owl-controls .owl-nav div {
+    display: none !important;
+  }
+
+  /*  Popular Categories */
+  .category-section .slick-initialized .slick-slide {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
+
+  .category-item {
+    padding: 30px 25px;
+  }
+
+  /* Best Books */
+  .feat-course-section {
+    padding-bottom: 120px;
+  }
+
+  .best-book-section .owl-nav {
+    margin-left: 0px;
+    right: 0%;
+    left: auto;
+    margin-right: 110px;
+    bottom: 0px;
+    margin-bottom: -50px;
+  }
+
+  .bbook_crs_item {
+    width: 89%;
+    margin-left: 0px;
+    margin-top: 100px;
+  }
+
+  .best-book-section .base-header {
+    text-align: center;
+  }
+
+  .bbook_wrap {
+    justify-content: center;
+  }
+
+  .bbook_btn {
+    margin-top: 50px;
+    justify-content: center;
+    margin-bottom: 45px;
+  }
+
+  #best_book::after {
+    width: 81%;
+    height: 85%;
+    top: 25px;
+  }
+
+  .best-book-section .owl-dots {
+    right: auto;
+    margin-right: 0px;
+    bottom: 0px;
+    margin-bottom: -49px;
+    width: auto;
+  }
+
+  /* Feedback */
+  .lfeedback-section {
+    padding-top: 190px;
+    padding-bottom: 133px;
+  }
+
+  .lfeedback_img {
+    width: auto;
+  }
+
+  .lfeedback-section .lfeedback_item {
+    padding-left: 5px;
+  }
+
+  .lfeedback-section .owl-dots {
+    margin-left: 18px;
+  }
+
+  /* Newsletter */
+  .newsletter_form {
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer_socil {
+    margin-left: -20px;
+  }
+
+  .quick_lnk ul li {
+    margin: 0px 10px;
+  }
+
+  /* HOME Two */
+  /*  About Section  */
+  .about-section {
+    padding-top: 84px;
+    padding-bottom: 125px;
+  }
+
+  .abt_course {
+    top: 108%;
+    margin-right: 25px;
+  }
+
+  .abt_rating {
+    top: 110px;
+    left: -15px;
+  }
+
+  .about_text {
+    padding-left: 15px;
+    line-height: 1.3;
+  }
+
+  .about_text h3 {
+    font-size: 40px;
+    line-height: 1.3;
+  }
+
+  /*  Footer */
+  .footertwo-section .footer_socil {
+    margin-left: 0px;
+  }
+
+  .footertwo-section .quick_lnk ul li {
+    margin: 0px 0px;
+  }
+
+  .footertwo-section .col-sm-12 {
+    margin-bottom: 20px;
+  }
+
+  .footertwo-section .container {
+    padding-bottom: 50px;
+  }
+
+  /*  About Page */
+  .funfacts-section {
+    margin-bottom: -25px;
+  }
+
+  .funfacts_item {
+    margin-bottom: 25px;
+  }
+
+  /* Contact Page */
+  .contact-section .col-lg-4 {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .contact-section .col-lg-8 {
+    width: 100%;
+  }
+
+  .map-container iframe {
+    margin-top: 50px;
+  }
+
+  /* Blog Page */
+  .widget-area {
+    padding-left: 10px;
+    margin-top: 50px;
+  }
+
+  /*  Courses Page */
+  .single_course .col-lg-8 {
+    padding-right: 10px;
+  }
+
+  .single_curs_right {
+    margin-top: 35px;
+  }
+
+  .single_course {
+    padding-bottom: 120px;
+  }
+
+  /* Login Page */
+  .reg_wrap {
+    grid-template-columns: 1fr;
+    gap: 27px;
+    padding: 70px;
+  }
+
+  .reg_img img {
+    width: 380px;
+    margin: auto;
+    display: block;
+  }
+
+  .login-form h2,
+  .registration-form h2 {
+    text-align: center;
+    line-height: 35px;
+  }
+
+  /* Teacher Page */
+  .teacher_achieve_list i {
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .teacher_achieve_list h3 {
+    font-size: 20px;
+  }
+
+  .teacher_achieve {
+    gap: 10px;
+    padding: 30px 20px;
+  }
+
+  .teacher_about {
+    padding: 25px 20px 20px;
+  }
+
+  .teacher_avatar img {
+    padding: 25px 20px;
+    width: 100%;
+  }
+
+  /* Event Page */
+  .event_details_page .single_curs_right {
+    margin-top: 50px;
+  }
+
+  .event_details_page {
+    padding-bottom: 130px;
+  }
+}
+
+/*                      Tablet Portrait
+=======================================================================================*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  /*--------------------------------------
+   Header And SLider
+----------------------------------------*/
+  .hero_two .hero_text {
+    text-align: left;
+    margin-top: 0px;
+  }
+
+  .hero-section.hero_two {
+    padding-bottom: 100px;
+    height: auto;
+  }
+
+  .hero_two .hero_text br {
+    display: none;
+  }
+
+  .hero_two .hero_text h2 {
+    font-size: 40px;
+    line-height: 1.3;
+  }
+
+  .hero_two .hero_img {
+    margin-left: 30px;
+    width: 332px;
+    margin-top: 0px;
+  }
+
+  .hero_two .hero_stu {
+    top: -4%;
+    margin-left: -50px;
+  }
+
+  .pencil {
+    top: 92%;
+    left: 1%;
+  }
+
+  .coding {
+    top: 30%;
+    right: 4px;
+  }
+
+  /*  About Page */
+  .cta_wrap {
+    padding: 50px 30px;
+  }
+
+  .cta_text {
+    padding-right: 20px;
+  }
+
+  .about_pg_lfeedback {
+    padding-top: 140px;
+  }
+
+  /*  Course Page */
+  .course_tab ul li button {
+    padding: 7px 44px;
+  }
+}
+
+
+/*                          Phone
+=======================================================================================*/
+
+@media only screen and (max-width: 767px) {
+
+  /*--------------------------------------
+   Header And SLider
+----------------------------------------*/
+  .base-header h3 {
+    font-size: 30px;
+  }
+
+  .hero_course {
+    justify-content: space-between;
+    display: none;
+  }
+
+  .hero_text h2 {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+
+  .hero_img {
+    margin-top: 55px;
+    width: auto;
+  }
+
+  .hero_text br {
+    display: none;
+  }
+
+  /* popular categories */
+  .category-section .arrow_left.slick-arrow {
+    margin-right: 50px;
+  }
+
+  .category-section .slick-arrow {
+    font-size: 22px;
+  }
+
+  .category-section .slick-initialized .slick-slide {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
+
+  .category-item {
+    padding: 30px 30px;
+  }
+
+  /* Best Book */
+  .bbook_wrap {
+    flex-direction: column;
+  }
+
+  #best_book::after {
+    display: none;
+  }
+
+
+  .bbook_crs_item {
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  .bbook_btn {
+    gap: 15px;
+  }
+
+  /*  Feedback */
+  .lfeedback_img {
+    margin-bottom: 50px;
+  }
+
+  .lfeedback-section {
+    padding-top: 180px;
+  }
+
+  /*  Nexsletter */
+  .newsletter_form a {
+    width: 130px;
+    padding: 0px 0px;
+  }
+
+  .newsletter_form input {
+    width: calc(100% - 100px);
+  }
+
+  /* Footer */
+  .footer_logo {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .footer_socil {
+    margin-left: 0px;
+    margin-top: 26px;
+  }
+
+  .footer_socil ul {
+    text-align: center;
+  }
+
+  /* ====== Home Two ===== */
+
+  .hero_two {
+    height: auto;
+    padding-bottom: 0px;
+  }
+
+  .hero_two .hero_img {
+    margin-left: 0px;
+  }
+
+  .hero_two .hero_stu {
+    top: 12%;
+    margin-left: -5px;
+    padding: 11px 15px 14px;
+  }
+
+  .coding {
+    right: 0px;
+  }
+
+  .pencil {
+    left: 0px;
+  }
+
+  .hero_two .hero_text {
+    margin-top: 30px;
+  }
+
+  .hero_two .hero_text h2 {
+    font-size: 40px;
+    line-height: 1.3;
+  }
+
+  /* About */
+  .about-section {
+    padding-bottom: 90px;
+  }
+
+  .abt_rating,
+  .abt_course {
+    padding: 15px 20px 13px;
+  }
+
+  .abt_course {
+    top: 109%;
+    margin-right: 15px;
+  }
+
+  .abt_rating {
+    left: 13px;
+  }
+
+  .about_text {
+    margin-top: 74px;
+    padding-left: 0px;
+  }
+
+  /*  Footer */
+  .footertwo-section .footer_logo {
+    text-align: left;
+  }
+
+  .footertwo-section .quick_lnk {
+    margin-bottom: 20px;
+  }
+
+  .footertwo-section .useful_lnk {
+    margin-bottom: 20px;
+  }
+
+  /* About Page */
+  .about_pg_sec {
+    padding-bottom: 130px;
+  }
+
+  .about_pg_lfeedback {
+    padding-top: 130px;
+    padding-bottom: 140px;
+  }
+
+  .cta_text {
+    padding-right: 0px;
+  }
+
+  .cta_wrap {
+    grid-template-columns: 1fr;
+    padding: 50px 40px;
+    text-align: center;
+  }
+
+  .cta_text h3 {
+    line-height: 40px;
+  }
+
+  .cta_wrap a {
+    width: 180px;
+    margin: auto;
+    margin-top: 15px;
+  }
+
+  /*  Blog Page */
+  .single_blog_container .comment_imgg {
+    width: 240px;
+    margin-right: 15px;
+  }
+
+  /* Courses Page */
+  .course_tab ul {
+    flex-direction: column;
+  }
+
+  .course_tab ul li button {
+    border-right: 1px solid transparent;
+  }
+
+  .course_tab ul li button {
+    padding: 7px 30px;
+  }
+
+  .course_instractor {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .sturev_wrap {
+    grid-template-columns: 92px 1fr;
+  }
+
+  .sturev_name {
+    margin-top: -20px;
+  }
+
+  .sturev_rating {
+    margin-left: inherit;
+    text-align: left;
+    grid-column: 2/-1;
+    margin-top: -75px;
+  }
+
+  .carousel-item.sturev_item {
+    padding: 30px 30px;
+  }
+	.cat_search_filter { 
+		grid-template-columns: 1fr;
+		grid-gap: 15px; 
+	}
+
+  /*  Login Page */
+  .reg_wrap {
+    gap: 27px;
+    padding: 30px;
+  }
+
+  .reg_img img {
+    width: auto;
+  }
+
+  /* Teacher Page */
+  .teacher_partner {
+    grid-template-columns: 1fr;
+  }
+
+  .teacher_partner .partner_col {
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .teacher_partner .partner_col:last-child {
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  .teach_course_tab {
+    margin-top: 50px;
+  }
+
+  .teach_course_tab ul li button.nav-link {
+    font-size: 20px;
+    padding: 0px 20px 0px 0px;
+    margin-right: 20px;
+  }
+  
+  
+}
+
+/* Mobile Vertical Layout: 488px 
+===============================================================================*/
+@media only screen and (min-width: 288px) and (max-width: 400px) {
+  .bbook_btn {
+    flex-direction: column;
+  }
+
+  .blog_read .more-link {
+    padding: 14px 30px 14px 30px;
+  }
+
+  .blog_read {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+}
+
+@media only screen and (min-width: 280px) and (max-width: 310px) {
+
+  /* Event Page */
+  .events-page .feat_cour_rating {
+    flex-direction: column;
+  }
+}
+
+
+@media (min-width:576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width:768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width:992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}

@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Enums\UserRoles;
 use Illuminate\Http\Request;
 
 class AuthTeacher

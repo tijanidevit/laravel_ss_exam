@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Teacher;
+use App\Models\FormStudent;
+use App\Models\FormSubject;
 use App\Models\Form;
 use App\Models\Subject;
 
@@ -17,5 +19,24 @@ class DashboardController extends Controller
         $forms_count = Form::count();
         $subjects_count = Subject::count();
         return view('admin.dashboard', compact(['students_count', 'teachers_count', 'forms_count', 'subjects_count']));
+    }
+    
+    public function teacher()
+    {
+        $user = auth()->user();
+        $teacher = $user->teacher;
+        $assigned_form = $teacher->form_teacher;
+        if($assigned_form){
+            $forms_count = 1;
+            $form = $assigned_form->form;
+            $form_id = $form->id;
+            $students_count = FormStudent::where('form_id', $form_id)->count();
+            $subjects_count = FormSubject::where('form_id', $form_id)->count();
+            
+            return view('teacher.dashboard', compact(['students_count', 'forms_count', 'subjects_count']));
+        }
+        else {
+            
+        }        
     }
 }

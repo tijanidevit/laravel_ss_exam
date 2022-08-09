@@ -16,7 +16,7 @@ class SubjectSeeder extends Seeder
     public function run()
     {
         $subjects = [
-            ['name' => 'Eglish Language'],
+            ['name' => 'English Language'],
             ['name' => 'Mathematics'],
             ['name' => 'Yoruba Language'],
             ['name' => 'French Language'],

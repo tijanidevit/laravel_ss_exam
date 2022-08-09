@@ -7,14 +7,19 @@ use Illuminate\Http\Request;
 
 class FormStudentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $user = auth()->user();
+        $teacher = $user->teacher;
+        $assigned_form = $teacher->form_teacher;
+        $form = $assigned_form->form;
+        $form_id = $form->id;
+        $students_count = FormStudent::where('form_id', $form_id)->count();
+        $subjects_count = FormSubject::where('form_id', $form_id)->count();
+            
+        return view('teacher.dashboard', compact());
+        
     }
 
     /**

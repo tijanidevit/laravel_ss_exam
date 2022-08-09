@@ -6,12 +6,20 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\FormTeacherController;
+use App\Http\Controllers\FormSubjectController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
+
+//All Modules
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('logout', function ()
+{
+    Auth::logout();
+    return redirect('/');
+})->middleware(['auth'])->name('logout');
 
 
 Route::get('admin/login', function ()
@@ -19,11 +27,7 @@ Route::get('admin/login', function ()
     return view('admin.auth.login');
 });
 
-Route::get('logout', function ()
-{
-    Auth::logout();
-    return redirect('/');
-})->middleware(['auth'])->name('logout');
+
 
 
 //ADMIN
@@ -50,4 +54,32 @@ Route::middleware(['auth', 'auth.admin'])->prefix('admin')->group(function(){
 
 
     Route::post('class/assign/{teacher}', [FormTeacherController::class, 'store'])->name('admin.form-teacher.store');
+});
+
+
+
+
+
+
+
+
+//TEACHER
+Route::get('teacher/login', function ()
+{
+    return view('teacher.auth.login');
+})->name('teacher.login');
+Route::post('teacher/login', [AuthController::class, 'login'])->name('teacher_login');
+
+
+Route::middleware(['auth', 'auth.teacher'])->prefix('teacher')->group(function(){
+    Route::get('dashboard', [DashboardController::class, 'teacher'])->name('teacher.dashboard');
+
+    Route::get('class', [FormTeacherController::class, 'show'])->name('teacher.class.show');
+
+    Route::get('students/{student}', [StudentController::class, 'show'])->name('teacher.students.show');
+
+    Route::get('subjects/', [FormSubjectController::class, 'index'])->name('teacher.subjects.index');
+
+
+    Route::post('class/assign/{teacher}', [FormTeacherController::class, 'store'])->name('teacher.form-teacher.store');
 });

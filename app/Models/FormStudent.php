@@ -15,7 +15,7 @@ class FormStudent extends Model
         return $this->belongsTo(Form::class);
     }
 
-    public function teacher() : BelongsTo{
-        return $this->belongsTo(Teacher::class);
+    public function student() : BelongsTo{
+        return $this->belongsTo(Student::class);
     }
 }

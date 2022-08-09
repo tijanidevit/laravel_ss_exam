@@ -27,6 +27,14 @@ class AuthController extends Controller
             if ($user->isAdmin()) {
                 return redirect()->route('admin.dashboard');
             }
+
+            if ($user->isTeacher()) {
+                return redirect()->route('teacher.dashboard');
+            }
+
+            if ($user->isStudent()) {
+                return redirect()->route('student.dashboard');
+            }
         }
         else{
             return back()->with('error', 'Invalid Credentials');
