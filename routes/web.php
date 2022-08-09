@@ -3,7 +3,9 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\FormTeacherController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +46,11 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::get('teachers', [TeacherController::class, 'index'])->name('admin.teachers.index');
     Route::get('teachers/new', [TeacherController::class, 'create'])->name('admin.teachers.create');
     Route::post('teachers', [TeacherController::class, 'store'])->name('admin.teachers.store');
+    Route::get('teachers/{teacher}', [TeacherController::class, 'show'])->name('admin.teachers.show');
+
+
+    Route::post('class/assign/{teacher}', [FormTeacherController::class, 'store'])->name('admin.form-teacher.store');
+
 
     
 

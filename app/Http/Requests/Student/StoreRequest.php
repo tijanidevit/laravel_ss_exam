@@ -13,7 +13,7 @@ class StoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +21,20 @@ class StoreRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules() : array
     {
         return [
-            //
+            'reg_no' => 'required|unique:students',
+            'fullname' => 'required',
+            'image' => 'required|mimes:jpeg,png,jpg,gif',
+            'form_id' => 'required',
+        ];
+    }
+
+    public function message() : array
+    {
+        return [
+            'reg_no.unique' => 'An account already exists with this reg_no',
         ];
     }
 }

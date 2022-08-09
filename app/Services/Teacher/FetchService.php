@@ -14,11 +14,11 @@ class FetchService{
     public function all()
     {
         $teachers = Teacher::orderBy('staff_id')->get();
-        return $teachers->load(['user', 'form']);
+        return $teachers->load(['user', 'form_teacher.form']);
     }
 
     public function one()
     {
-        return $this->teacher->load(['user', 'form']);
+        return $this->teacher->load(['user', 'form_teacher.form']);
     }
 }

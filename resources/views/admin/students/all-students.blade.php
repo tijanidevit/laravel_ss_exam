@@ -1,15 +1,15 @@
 @extends('admin.layout.app')
 
 @section('title')
-    Teachers
+    students
 @endsection
 
 @section('page_title')
-    Teachers
+    students
 @endsection
 
 @section('page_description')
-    All Teachers List
+    All students List
 @endsection
 
 @section('content')
@@ -26,29 +26,21 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Class</th>
-                                <th class="text-end">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($teachers as $teacher)
+                            @forelse ($students as $student)
                                 <tr>
-                                    <td>{{$teacher->staff_id}}</td>
+                                    <td>{{$student->reg_no}}</td>
                                     <td>
                                         <h2 class="table-avatar">
                                             
-                                            <a href="#" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="{{asset('storage/teachers/images/'.$teacher->user->image)}}" alt="{{$teacher->user->fullname}}"></a>
-                                            <a href="#">{{$teacher->user->fullname}}</a>
+                                            <a href="#" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="{{asset('storage/students/images/'.$student->user->image)}}" alt="{{$student->user->fullname}}"></a>
+                                            <a href="#">{{$student->user->fullname}}</a>
                                         </h2>
                                     </td>
-                                    <td>{{$teacher->user->email}}</td>
-                                    <td>{{optional(optional($teacher->form_teacher)->form)->name}}</td>
-                                    <td class="text-end">
-                                        <div class="actions">
-                                            <a href="{{route('admin.teachers.show', $teacher->id)}}" class="btn btn-sm bg-success-light me-2">
-                                                <i class="fas fa-eye"></i> View Details
-                                            </a>
-                                        </div>
-                                    </td>
+                                    <td>{{$student->user->email}}</td>
+                                    <td>{{optional(optional($student->form_student)->form)->name}}</td>
                                 </tr>
                             @empty
                                 

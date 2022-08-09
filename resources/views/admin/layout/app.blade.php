@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="{{asset('assets/portal/plugins/fontawesome/css/fontawesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/portal/plugins/fontawesome/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/portal/plugins/datatables/datatables.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('assets/portal/css/style.css')}}">
 </head>
@@ -54,6 +55,7 @@
 
     <script src="{{asset('assets/portal/plugins/apexchart/apexcharts.min.js')}}"></script>
     <script src="{{asset('assets/portal/plugins/apexchart/chart-data.js')}}"></script>
+    <script src="{{asset('assets/portal/plugins/datatables/datatables.min.js')}}"></script>
 
     <script src="{{asset('assets/portal/js/script.js')}}"></script>
 </body>

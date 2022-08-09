@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Teacher;
+use App\Models\Form;
 use App\Services\Teacher\StoreService;
+use App\Services\Teacher\FetchService;
 use App\Http\Requests\Teacher\StoreRequest;
-use App\Http\Requests\Teacher\FetchService;
 
 class TeacherController extends Controller
 {
     public function index()
     {
-        $teachers = (new FetchService())->run();
+        $teachers = (new FetchService())->all();
         return view('admin.teachers.all-teachers', compact('teachers'));
     }
 
@@ -23,7 +24,7 @@ class TeacherController extends Controller
     public function store(StoreRequest $request)
     {
         try {
-            $teacher = (new StoreService($request->all()))->run();
+            $teacher = (new StoreService($request->validated()))->run();
             return back()->with('success', 'Teacher added successfully!');
         } catch (\Exception $ex) {
             return back()->with('error', $ex->getMessage());
@@ -32,21 +33,8 @@ class TeacherController extends Controller
 
     public function show(Teacher $teacher)
     {
-        //
-    }
-
-    public function edit(Teacher $teacher)
-    {
-        //
-    }
-
-    public function update(Request $request, Teacher $teacher)
-    {
-        //
-    }
-
-    public function destroy(Teacher $teacher)
-    {
-        //
+        $teacher = (new FetchService($teacher))->one();
+        $forms = Form::all();
+        return view('admin.teachers.show-teacher', compact('teacher','forms'));
     }
 }
