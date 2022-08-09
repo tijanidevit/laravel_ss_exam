@@ -22,15 +22,15 @@
                         <li><a href="{{route('admin.teachers.index')}}">Teachers List</a></li>
                     </ul>
                 </li>
-                <li class="submenu">
+                {{-- <li class="submenu">
                     <a href="#"><i class="fas fa-book-reader"></i> <span> Subjects</span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="{{route('admin.subjects.create')}}">Add Subject</a></li>
                         <li><a href="{{route('admin.subjects.index')}}">Subjects List</a></li>
                     </ul>
-                </li>
+                </li> --}}
                 <li>
-                    <a href="fees.html"><i class="fas fa-lock"></i> <span>Logout</span></a>
+                    <a href="{{route('logout')}}"><i class="fas fa-lock"></i> <span>Logout</span></a>
                 </li>
                           
             </ul>

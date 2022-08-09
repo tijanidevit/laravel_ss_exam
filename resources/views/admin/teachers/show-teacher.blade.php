@@ -36,8 +36,8 @@
                                     <span class="info-span">{{$teacher->user->email}}</span>
                                 </li>
                                 <li>
-                                    <span class="title-span">Class</span>
-                                    <span class="info-span">{{optional($teacher->form_teacher->form)->name}}</span>
+                                    <span class="title-span">Class : </span>
+                                    <span class="info-span">{{optional(optional($teacher->form_teacher)->form)->name}}</span>
                                 </li>
                                 <li>
                                     <span class="title-span">Bio : </span>
@@ -74,7 +74,7 @@
                                                 @endforelse
                                             </select>
                                             <div class="input-group-prepend">
-                                                <button class="btn btn-primary">Assign course to teacher</button>
+                                                <button class="btn btn-primary">Assign class to teacher</button>
                                             </div>
                                         </div> 
 

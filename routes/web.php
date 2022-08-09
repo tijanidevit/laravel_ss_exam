@@ -34,7 +34,7 @@ Route::get('admin/login', function ()
 Route::post('admin/login', [AuthController::class, 'login'])->name('admin_login');
 
 
-Route::middleware(['auth'])->prefix('admin')->group(function(){
+Route::middleware(['auth', 'auth.admin'])->prefix('admin')->group(function(){
     Route::get('dashboard', [DashboardController::class, 'admin'])->name('admin.dashboard');
 
     Route::get('students', [StudentController::class, 'index'])->name('admin.students.index');
@@ -50,12 +50,4 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
 
 
     Route::post('class/assign/{teacher}', [FormTeacherController::class, 'store'])->name('admin.form-teacher.store');
-
-
-    
-
-    Route::get('subjects', [SubjectController::class, 'index'])->name('admin.subjects.index');
-    Route::get('subjects/new', [SubjectController::class, 'create'])->name('admin.subjects.create');
-    Route::post('subjects', [SubjectController::class, 'store'])->name('admin.subjects.store');
-
 });
