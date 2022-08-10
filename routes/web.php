@@ -8,6 +8,7 @@ use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\FormTeacherController;
 use App\Http\Controllers\FormSubjectController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExamQuestionController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -79,6 +80,12 @@ Route::middleware(['auth', 'auth.teacher'])->prefix('teacher')->group(function()
     Route::get('students/{student}', [StudentController::class, 'show'])->name('teacher.students.show');
 
     Route::get('subjects/', [FormSubjectController::class, 'index'])->name('teacher.subjects.index');
+    Route::get('subjects/{formSubject}', [FormSubjectController::class, 'show'])->name('teacher.subjects.show');
+
+    Route::get('subjects/{formSubject}/questions', [ExamQuestionController::class, 'index'])->name('teacher.subjects.questions');
+    Route::post('subjects/{formSubject}/questions', [ExamQuestionController::class, 'store'])->name('teacher.subjects.questions');
+    Route::delete('subjects/{formSubject}/questions/{examQuestion}', [ExamQuestionController::class, 'destroy'])->name('teacher.subjects.question.delete')->scopeBindings();
+
 
 
     Route::post('class/assign/{teacher}', [FormTeacherController::class, 'store'])->name('teacher.form-teacher.store');

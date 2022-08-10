@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('exam_question_id');
             $table->string('option');
-            $table->integer('is_answer');
+            $table->integer('is_answer')->default(0);
             $table->timestamps();
         });
     }

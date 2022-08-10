@@ -18,6 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('form_subject_id');
             $table->unsignedBigInteger('teacher_id');
             $table->string('question');
+            $table->string('score');
+            $table->string('percentage');
             $table->timestamps();
         });
     }

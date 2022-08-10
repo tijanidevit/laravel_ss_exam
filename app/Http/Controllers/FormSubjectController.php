@@ -16,8 +16,7 @@ class FormSubjectController extends Controller
         $form_id = $form->id;
         $form_subjects = FormSubject::where('form_id', $form_id)->get();
         $form_subjects->load('subject');
-        dd($form_subjects);
             
-        return view('teacher.dashboard', compact());
+        return view('teacher.subjects.all-subjects', compact('form_subjects', 'form'));
     }
 }
