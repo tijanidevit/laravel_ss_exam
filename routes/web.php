@@ -108,4 +108,7 @@ Route::middleware(['auth', 'auth.student'])->prefix('student')->group(function()
     Route::get('exams/{formSubject}', [FormSubjectController::class, 'showExam'])->name('student.exams.show');
     
     Route::post('exams/{formSubject}/submit', [StudentResultController::class, 'store'])->name('student.exams.submit');
+    Route::get('exams/success', function(){
+        return view('student.success');
+    })->name('student.exams.submit');
 });

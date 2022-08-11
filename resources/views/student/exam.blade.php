@@ -104,19 +104,15 @@
                         </div>
 
                     </div>
-
-
-
                     <!---------- Form Button ---------->
                     <div class="form_btn mt-3">
-                        
+                
                         <div class="row">
                             <div class="col-md-10"></div>
                             <div class="col-md-2"><button
                                 type="submit"
                                 class="next_btn rounded-pill position-absolut text-uppercase text-white"
-                                id="nextBtn"
-                                onclick="nextPrev(1)"
+                                
                             >
                                 Submit
                             </button></div>

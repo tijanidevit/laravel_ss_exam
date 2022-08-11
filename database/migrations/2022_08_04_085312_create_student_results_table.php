@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('student_results', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('form_id');
+            $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('subject_id');
             $table->timestamps();
         });

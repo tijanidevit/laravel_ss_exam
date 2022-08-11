@@ -27,18 +27,27 @@ class StudentResultController extends Controller
 
         $student_id = $student->id;
         $form_id = $form->id;
+        $subject_id = $formSubject->subject->id;
     
         $total_questions = $formSubject->questions->count();
 
         $student_score = 0;
 
-        // dd($request->all());
-
         for ($i=1; $i <= $total_questions ; $i++) {
             $student_score += $request->input("option$i");            
         }
+        $score = "$student_score/$total_questions";
 
-        dd($student_score);
+        $percentage = (100 * $student_score) / $total_questions;
+
+        StudentResult::create([
+            'student_id' => $student_id,
+            'subject_id' => $subject_id,
+            'score' => $score,
+            'percentage' => $percentage,
+        ]);
+
+        return redirect()->route('student.exam.success');
     }
 
     
