@@ -39,4 +39,23 @@ class DashboardController extends Controller
             
         }        
     }
+
+    public function student()
+    {
+        $user = auth()->user();
+        $student = $user->student;
+        $form_student = $student->form_student;
+        if($form_student){
+            $form = $form_student->form;
+            $form_id = $form->id;
+            $form_subjects = FormSubject::where('form_id', $form_id)->get();
+
+            $form_subjects->load('subject');
+            
+            return view('student.dashboard', compact(['form_subjects']));
+        }
+        else {
+            
+        }        
+    }
 }

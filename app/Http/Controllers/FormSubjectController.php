@@ -19,4 +19,18 @@ class FormSubjectController extends Controller
             
         return view('teacher.subjects.all-subjects', compact('form_subjects', 'form'));
     }
+
+    
+    public function showExam(FormSubject $formSubject)
+    {
+        $user = auth()->user();
+        $student = $user->student;
+        $form_student = $student->form_student;
+        $form = $form_student->form;
+        
+        $subject = $formSubject->subject;
+        $questions = $formSubject->questions;
+        $form_subject = $formSubject;
+        return view('student.exam', compact('subject', 'questions', 'form', 'form_subject'));
+    }
 }

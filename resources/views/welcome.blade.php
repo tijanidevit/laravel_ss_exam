@@ -49,7 +49,7 @@
         <div class="navigation navigation_two">
             <div class="container">
                 <div class="logo">
-                    <a href="index-2.html"
+                    <a href="{{url('/')}}"
                         >
                         
 						<img class="img-fluid" src="{{asset('assets/portal/img/logo.png')}}" alt="Logo">
@@ -62,7 +62,7 @@
                 </div>
                 <!-- End: navigation  -->
                 <div class="header_sign">
-                    <a href="#" class="more-link"> Sign in</a>
+                    <a href="{{route('student.login')}}" class="more-link"> Sign in</a>
                 </div>
                 <!-- End: Sign in -->
             </div>

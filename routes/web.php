@@ -9,6 +9,7 @@ use App\Http\Controllers\FormTeacherController;
 use App\Http\Controllers\FormSubjectController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExamQuestionController;
+use App\Http\Controllers\StudentResultController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -86,7 +87,25 @@ Route::middleware(['auth', 'auth.teacher'])->prefix('teacher')->group(function()
     Route::post('subjects/{formSubject}/questions', [ExamQuestionController::class, 'store'])->name('teacher.subjects.questions');
     Route::delete('subjects/{formSubject}/questions/{examQuestion}', [ExamQuestionController::class, 'destroy'])->name('teacher.subjects.question.delete')->scopeBindings();
 
-
-
     Route::post('class/assign/{teacher}', [FormTeacherController::class, 'store'])->name('teacher.form-teacher.store');
+});
+
+
+
+
+
+//STUDENT
+Route::get('student/login', function ()
+{
+    return view('student.login');
+})->name('student.login');
+Route::post('student/login', [AuthController::class, 'login'])->name('student_login');
+
+
+Route::middleware(['auth', 'auth.student'])->prefix('student')->group(function(){
+    Route::get('dashboard', [DashboardController::class, 'student'])->name('student.dashboard');
+
+    Route::get('exams/{formSubject}', [FormSubjectController::class, 'showExam'])->name('student.exams.show');
+    
+    Route::post('exams/{formSubject}/submit', [StudentResultController::class, 'store'])->name('student.exams.submit');
 });
