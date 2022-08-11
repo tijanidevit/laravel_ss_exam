@@ -33,7 +33,7 @@
                                     <td class="text-end">
                                         <div class="actions">
                                             <a href="{{route('teacher.subjects.show', $form_subject->id)}}" class="btn btn-sm bg-success-light me-2">
-                                                <i class="fas fa-eye"></i> Student Performance
+                                                <i class="fas fa-eye"></i> Students' Performances
                                             </a>
                                             
                                             <a href="{{route('teacher.subjects.questions', $form_subject->id)}}" class="btn btn-sm bg-primary-light me-2">

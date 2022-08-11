@@ -78,7 +78,7 @@ Route::middleware(['auth', 'auth.teacher'])->prefix('teacher')->group(function()
 
     Route::get('class', [FormTeacherController::class, 'show'])->name('teacher.class.show');
 
-    Route::get('students/{student}', [StudentController::class, 'show'])->name('teacher.students.show');
+    Route::get('students/{student}', [StudentController::class, 'showTeacher'])->name('teacher.students.show');
 
     Route::get('subjects/', [FormSubjectController::class, 'index'])->name('teacher.subjects.index');
     Route::get('subjects/{formSubject}', [FormSubjectController::class, 'show'])->name('teacher.subjects.show');
@@ -108,7 +108,7 @@ Route::middleware(['auth', 'auth.student'])->prefix('student')->group(function()
     Route::get('exams/{formSubject}', [FormSubjectController::class, 'showExam'])->name('student.exams.show');
     
     Route::post('exams/{formSubject}/submit', [StudentResultController::class, 'store'])->name('student.exams.submit');
-    Route::get('exams/success', function(){
+    Route::get('exams/submission/success', function(){
         return view('student.success');
-    })->name('student.exams.submit');
+    })->name('student.exam.success');
 });

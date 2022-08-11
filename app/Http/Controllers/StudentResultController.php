@@ -40,9 +40,10 @@ class StudentResultController extends Controller
 
         $percentage = (100 * $student_score) / $total_questions;
 
-        StudentResult::create([
+        $xx = StudentResult::create([
             'student_id' => $student_id,
             'subject_id' => $subject_id,
+            'form_id' => $form_id,
             'score' => $score,
             'percentage' => $percentage,
         ]);

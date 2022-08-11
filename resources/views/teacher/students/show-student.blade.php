@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('teacher.layout.app')
 
 @section('title')
     {{$student->user->fullname}}
@@ -28,8 +28,8 @@
                                     <span class="info-span">{{$student->user->fullname}}</span>
                                 </li>
                                 <li>
-                                    <span class="title-span">Staff ID</span>
-                                    <span class="info-span">{{$student->staff_id}}</span>
+                                    <span class="title-span">Reg No</span>
+                                    <span class="info-span">{{$student->reg_no}}</span>
                                 </li>
                                 <li>
                                     <span class="title-span">Email : </span>
@@ -39,54 +39,43 @@
                                     <span class="title-span">Class</span>
                                     <span class="info-span">{{optional($student->form_student->form)->name}}</span>
                                 </li>
-                                <li>
-                                    <span class="title-span">Bio : </span>
-                                    <span class="info-span">{{$student->bio}}</span>
-                                </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-md-12">
-                            <p>{{$student->bio}}</p>
-                        </div>
-                    </div>
-                    <div class="row follow-sec">
-                        <h5 class="text-center">Assign new class</h5>
-                        <div class="col-md-12 mb-3">
-                            <form action="{{route('admin.form-student.store', $student->id)}}" method="post">
-                                @csrf
-                                <div class="col-md-12 mb-3">
-                                
-                                    <div class="col-12">
-                                        @if (session('success'))
-                                            <div class="alert alert-success">{{session('success')}}</div>
-                                        @endif
-                                    </div>
+                    
 
-                                    <div class="form-group">
-                                        <label for="">Select class</label>
-                                        <div class="input-group">
-                                            <select class="form-control" name="form_id" id="form_id">
-                                                @forelse ($forms as $form)
-                                                    <option value="{{$form->id}}">{{$form->name}}</option>
+                    <div class="row mt-5">
+                        <div class="col-sm-12">
+                            <div class="card card-table">
+                                <div class="card-body">
+                                    <h4>Performance</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-center mb-0 datatable">
+                                            <thead>
+                                                <tr>
+                                                    <th>Subject</th>
+                                                    <th>Score</th>
+                                                    <th>Percentage</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @forelse ($results as $result)
+                                                    <tr>
+                                                        <td>{{$result->subject->name}}</td>
+                                                        <td>
+                                                            {{$result->score}}
+                                                        </td>
+                                                        <td>{{$result->percentage}}</td>
+                                                        
+                                                    </tr>
                                                 @empty
+                                                    
                                                 @endforelse
-                                            </select>
-                                            <div class="input-group-prepend">
-                                                <button class="btn btn-primary">Assign course to student</button>
-                                            </div>
-                                        </div> 
-
-                                        @error('form_id')
-                                            <small class="text-danger">{{$message}}</small>
-                                        @enderror
-
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    
-                                    
                                 </div>
-                            </form>
+                            </div>
                         </div>
                         
                     </div>

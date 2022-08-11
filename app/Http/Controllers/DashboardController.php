@@ -36,7 +36,7 @@ class DashboardController extends Controller
             return view('teacher.dashboard', compact(['students_count', 'forms_count', 'subjects_count']));
         }
         else {
-            
+            return view('no-class');
         }        
     }
 
@@ -55,7 +55,7 @@ class DashboardController extends Controller
             return view('student.dashboard', compact(['form_subjects']));
         }
         else {
-            
+            return view('no-class');
         }        
     }
 }

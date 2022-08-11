@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FormSubject;
+use App\Models\StudentResult;
 use Illuminate\Http\Request;
 
 class FormSubjectController extends Controller
@@ -32,5 +33,24 @@ class FormSubjectController extends Controller
         $questions = $formSubject->questions;
         $form_subject = $formSubject;
         return view('student.exam', compact('subject', 'questions', 'form', 'form_subject'));
+    }
+
+    
+    public function show(FormSubject $formSubject)
+    {
+        $user = auth()->user();
+        $teacher = $user->teacher;
+        $form_teacher = $teacher->form_teacher;
+        $form = $form_teacher->form;
+        
+        $subject = $formSubject->subject;
+
+        $results = StudentResult::where([
+            'subject_id' => $subject->id,
+            'form_id' => $form->id
+        ])->get();
+        $results->load('student.user');
+
+        return view('teacher.subjects.show-subject', compact('subject', 'results'));
     }
 }
